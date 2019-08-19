@@ -1,0 +1,20 @@
+﻿@model IEnumerable<USSR.Models.UserModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+    <table class="table">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+               
+            </tr>
+        }
+
+    </table>
