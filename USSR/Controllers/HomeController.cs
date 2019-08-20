@@ -19,17 +19,16 @@ namespace USSR.Controllers
         }
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult GetUsers()
+        {
             IEnumerable<UserDTO> userDTO = userService.GetUsers();
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<UserDTO, UserModel>()).CreateMapper();
             var users = mapper.Map<IEnumerable<UserDTO>, List<UserModel>>(userDTO);
-            return View(users);
-        }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return Json(users, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Contact()
