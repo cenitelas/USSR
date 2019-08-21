@@ -1,4 +1,7 @@
-﻿class Hello extends React.Component {
+﻿import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Hello extends React.Component {
     constructor(props){
         super(props)
         this.state={
@@ -15,18 +18,12 @@
     render() {
         const users = this.state.users;
         return (
-        <div>
-            {
-                users.map(item=>
-                    <h1 key={item.Id}>{item.Name}</h1>
-                )
-            }
-        </div>
+            <h2>asdddd</h2>
         )
     }
 }
 
 ReactDOM.render(
     <Hello />,
-    document.getElementById("content")
+    document.getElementById("root")
 );
