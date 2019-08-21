@@ -8,8 +8,9 @@ namespace BLL.Interfaces
 {
     public interface IUserService
     {
-        void RegistrationUser(UserDTO userDto);
+        UserDTO RegistrationUser(UserDTO userDto);
         UserDTO GetUser(int? id);
+        UserDTO GetUser(string name);
         IEnumerable<UserDTO> GetUsers();
         void Dispose();
     }

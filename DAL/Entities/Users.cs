@@ -13,5 +13,7 @@ namespace DAL.Entities
         [Required]
         [StringLength(200)]
         public string name { get; set; }
+
+        public string pass { get; set; }
     }
 }

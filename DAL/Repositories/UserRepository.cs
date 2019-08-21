@@ -28,6 +28,11 @@ namespace DAL.Repositories
             return db.Users.Find(id);
         }
 
+        public Users Get(string name)
+        {
+            return db.Users.Where(i=>i.name.Equals(name)).FirstOrDefault();
+        }
+
         public void Create(Users user)
         {
             db.Users.Add(user);

@@ -31,11 +31,28 @@ namespace USSR.Controllers
             return Json(users, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Contact()
+        [HttpPost]
+        public ActionResult Login(UserModel user)
         {
-            ViewBag.Message = "Your contact page.";
+            var userDTO = userService.GetUser(user.Name);
+            if (userDTO!=null && user.Pass.Equals(userDTO.Pass))
+            {
+                var mapper = new MapperConfiguration(cfg => cfg.CreateMap<UserDTO, UserModel>()).CreateMapper();
+                var result = mapper.Map<UserDTO, UserModel>(userDTO);
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+            return Json(user, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult Reg(UserModel user)
+        {
 
-            return View();
+            if (userService.RegistrationUser(new UserDTO() { Name = user.Name, Pass = user.Pass }).Id!=0)
+            {
+                var mapper = new MapperConfiguration(cfg => cfg.CreateMap<UserDTO, UserModel>()).CreateMapper();
+                var result = mapper.Map<UserDTO, UserModel>(userService.GetUser(user.Name));
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+            return Json(user, JsonRequestBehavior.AllowGet);
         }
     }
 }

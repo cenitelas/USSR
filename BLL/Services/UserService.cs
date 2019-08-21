@@ -20,20 +20,24 @@ namespace BLL.Services
         {
             Database = uow;
         }
-        public void RegistrationUser(UserDTO userDTO)
+        public UserDTO RegistrationUser(UserDTO userDTO)
         {
             Users user = Database.Users.Find(x=>x.name.Equals(userDTO.Name)).FirstOrDefault();
 
             if (user != null)
-                throw new ValidationException("Пользователь существует!", "");
+                return userDTO;
 
 
             user = new Users()
             {
-                name = userDTO.Name
+                name = userDTO.Name,
+                pass = userDTO.Pass
             };
             Database.Users.Create(user);
             Database.Save();
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Users, UserDTO>()).CreateMapper();
+            var newUser =  mapper.Map<Users, UserDTO>(Database.Users.Get(user.name));
+            return newUser;
         }
 
         public IEnumerable<UserDTO> GetUsers()
@@ -45,12 +49,23 @@ namespace BLL.Services
         public UserDTO GetUser(int? id)
         {
             if (id == null)
-                throw new ValidationException("Не установлено id пользователя", "");
+                return null;
             var user = Database.Users.Get(id.Value);
             if (user == null)
-                throw new ValidationException("Пользователь не найден", "");
+                return null;
 
-            return new UserDTO { Name = user.name, Id = user.id};
+            return new UserDTO { Name = user.name, Id = user.id, Pass = user.pass};
+        }
+
+        public UserDTO GetUser(string name)
+        {
+            if (name == null)
+                return null;
+            var user = Database.Users.Get(name);
+            if (user == null)
+                return null;
+
+            return new UserDTO { Name = user.name, Id = user.id, Pass=user.pass};
         }
 
         public void Dispose()
