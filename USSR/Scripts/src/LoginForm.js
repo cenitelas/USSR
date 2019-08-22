@@ -6,13 +6,17 @@ class LoginForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            login: '', password: '', rePassword:'', isReg:props.isReg, message:''
+            login: '', password: '', rePassword:'', isReg:false, message:''
         };
    
         this.onChangeLogin = this.onChangeLogin.bind(this);
         this.onChangePassword = this.onChangePassword.bind(this);
         this.onChangeRePassword = this.onChangeRePassword.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    componentDidMount(){
+
     }
 
     onSubmit(event) {
@@ -64,7 +68,7 @@ class LoginForm extends React.Component {
         }
         event.preventDefault();
     }
-
+    
     onChangePassword(event) {
         this.setState({ password: event.target.value });
     }
@@ -78,6 +82,7 @@ class LoginForm extends React.Component {
     }
 
     render() {
+   
             return (
                 <form onSubmit={this.onSubmit}>
                     <p><label> Логин: <input type="text" name="login" value={this.state.login}
@@ -91,6 +96,7 @@ class LoginForm extends React.Component {
                     <p><input type="submit" value="Submit" /></p>
                     <p>{this.state.message}</p>
                 </form>
+               
             );
     }
 }

@@ -54,5 +54,10 @@ namespace USSR.Controllers
             }
             return Json(user, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult GetTime()
+        {
+            return Json(DateTime.Now, JsonRequestBehavior.AllowGet);
+        }
     }
 }
