@@ -28,18 +28,34 @@
  }
 
  .header .content .menu  .up{
-    width: 30%;
+    width: 45%;
     font-size: 80%;
  }
 
+.list-img{
+    display:inline-block;
+    width:25px;
+    height:20px;
+    background-repeat:no-repeat;
+    background-size:contain;
+}
+
+.header .content .menu .up li:nth-child(1) .list-img {
+    background-image: url(../img/mre-icon-info.png);
+}
+
+.header .content .menu .up li:nth-child(2) .list-img {
+    background-image: url(../img/mre-icon-chat.png);
+}
+
  .header .content .menu  .down{
-    width: 60%;
+    width: 80%;
     font-size: 130%;
 
  }
  .header .content .menu .down li:first-child{
     border-right: 1px solid white;
-    width: 40%;
+    width: 65%;
  }
 
  .header .content .menu  ul{
@@ -51,7 +67,9 @@
  }
 
  .header .content .menu  li{
-    padding: 0 3%;
+    padding: 0 10%;
+    display:flex;
+    justify-content:space-between;
  }
  
  .header .content .menu  li a{

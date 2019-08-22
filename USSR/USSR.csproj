@@ -168,7 +168,10 @@
     <Content Include="package.json" />
     <Content Include=".babelrc" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\img\mre-icon-info.png" />
     <Content Include="Scripts\src\App.js" />
+    <Content Include="Scripts\src\Content.css" />
+    <Content Include="Scripts\src\Content.js" />
     <Content Include="Scripts\src\Header.css" />
     <Content Include="Scripts\src\Header.js" />
     <Content Include="Scripts\src\index.css" />
