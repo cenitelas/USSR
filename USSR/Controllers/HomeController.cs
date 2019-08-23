@@ -13,6 +13,13 @@ namespace USSR.Controllers
     public class HomeController : Controller
     {
         IUserService userService;
+
+        static List<RoomInfoModel> roomInfo = new List<RoomInfoModel>()
+        {
+            new RoomInfoModel(){Id=1,Name="First room",Discription="NIce Room asdjkfhaksljdfhksjadhk", Delay=60, MaxUsers=9, MinUsers=2, UrlImage="room1.jpg", EscapeRate=30},
+            new RoomInfoModel(){Id=2,Name="Second room",Discription="NIce Second Room asdjkfhaksljdfhksjadhk", Delay=30, MaxUsers=5, MinUsers=2, UrlImage="room2.jpg", EscapeRate=40}
+        };
+
         public HomeController(IUserService serv)
         {
             userService = serv;
@@ -55,9 +62,9 @@ namespace USSR.Controllers
             return Json(user, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult GetTime()
+        public ActionResult GetRoomsInfo()
         {
-            return Json(DateTime.Now, JsonRequestBehavior.AllowGet);
+            return Json(roomInfo, JsonRequestBehavior.AllowGet);
         }
     }
 }
