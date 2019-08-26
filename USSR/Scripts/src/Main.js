@@ -2,6 +2,7 @@
 import LoginForm from './LoginForm'
 import Header from './Header'
 import Content from './Content'
+import Footer from './Footer'
 import './Main.css'
 
 class Main extends React.Component {
@@ -12,8 +13,9 @@ class Main extends React.Component {
     render() {
         return (
             <div className="main">
-                <Header className="header"/>
+                <Header/>
                 <Content/>
+                <Footer/>
             </div>
         )
     }

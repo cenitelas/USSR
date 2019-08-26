@@ -1,3 +1,46 @@
 ﻿.room-info{
+  width: 400px;
+  height: 400px;
+  margin: 1%;
 
+}
+
+.room-info .logo{
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.room-info .logo img{
+    width: 400px;
+    height: 250px;
+    height: auto;
+    z-index: 3;
+}
+
+.room-info .room-stat{
+    padding: 0 2%;
+    display: flex;
+    visibility: hidden;
+    font-weight: 600;
+    justify-content: space-between;
+    color: white;
+    width: 400px;
+    height: 250px;
+    position: absolute;
+    background-color: rgba(255, 166, 0, 0.479);
+    z-index: 2;
+}
+
+.room-info .room-stat p {
+margin-top: 100px;
+}
+
+.room-info .logo:hover .room-stat{
+visibility: visible;
+}
+
+.room-info .logo:hover img{
+   transform:scale(1.2,1.2);
+   overflow: hidden;
 }

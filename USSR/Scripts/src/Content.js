@@ -1,5 +1,6 @@
 ﻿import React from 'react';
 import './Content.css'
+import RoomsInfoBlock from './RoomsInfoBlock'
 
 class Content extends React.Component {
     constructor(props) {
@@ -16,13 +17,14 @@ class Content extends React.Component {
     }
 
     getPage() {
-        this.setState({ page: <h3>dddd</h3> });
+        this.setState({ page: <RoomsInfoBlock/> });
     }
 
     render() {
 
         return (
             <div className="content">
+                <div className="margin"></div>
                 {this.state.page}
             </div>
         )

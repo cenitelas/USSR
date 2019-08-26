@@ -11,7 +11,7 @@ class Main extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/Home/GetRoosInfo')
+        fetch('/Home/GetRoomsInfo')
             .then(request => request.json())
             .then(result => this.setState({ roomsInfo: result }));
     }
@@ -20,9 +20,12 @@ class Main extends React.Component {
         const roomsInfo = this.state.roomsInfo;
         return (
             <div className="rooms-info-block">
-                {roomsInfo.map(item =>
-                    <RoomInfo room={item}/>
-                 )}
+                <div className="rooms-info-block-header">Все комнаты побега</div>
+                <div className="rooms-info-block-content">
+                        {roomsInfo.map(item =>
+                            <RoomInfo key={item.id} room={item}/>
+                        )}
+                 </div>
             </div>
         )
     }

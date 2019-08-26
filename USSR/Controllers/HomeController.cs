@@ -17,7 +17,9 @@ namespace USSR.Controllers
         static List<RoomInfoModel> roomInfo = new List<RoomInfoModel>()
         {
             new RoomInfoModel(){Id=1,Name="First room",Discription="NIce Room asdjkfhaksljdfhksjadhk", Delay=60, MaxUsers=9, MinUsers=2, UrlImage="room1.jpg", EscapeRate=30},
-            new RoomInfoModel(){Id=2,Name="Second room",Discription="NIce Second Room asdjkfhaksljdfhksjadhk", Delay=30, MaxUsers=5, MinUsers=2, UrlImage="room2.jpg", EscapeRate=40}
+            new RoomInfoModel(){Id=2,Name="Second room",Discription="NIce Second Room asdjkfhaksljdfhksjadhk", Delay=30, MaxUsers=5, MinUsers=2, UrlImage="room2.jpg", EscapeRate=40},
+            new RoomInfoModel(){Id=3,Name="Third room",Discription="NIce Third Room asdjkfhaksljdfhksjadhk", Delay=40, MaxUsers=10, MinUsers=5, UrlImage="room3.jpg", EscapeRate=60},
+            new RoomInfoModel(){Id=4,Name="Four room",Discription="NIce Four Room asdjkfhaksljdfhksjadhk", Delay=130, MaxUsers=25, MinUsers=10, UrlImage="room4.jpg", EscapeRate=30}
         };
 
         public HomeController(IUserService serv)
