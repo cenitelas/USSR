@@ -6,7 +6,8 @@ class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            roomsInfo:[]
+            roomsInfo:[],
+            setPage:props.setPage
         }
     }
 
@@ -23,7 +24,7 @@ class Main extends React.Component {
                 <div className="rooms-info-block-header">Все комнаты побега</div>
                 <div className="rooms-info-block-content">
                         {roomsInfo.map(item =>
-                            <RoomInfo key={item.id} room={item}/>
+                            <RoomInfo setPage={this.state.setPage} key={item.id} room={item}/>
                         )}
                  </div>
             </div>

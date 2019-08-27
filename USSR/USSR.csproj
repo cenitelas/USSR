@@ -149,6 +149,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Room.cs" />
     <Compile Include="Models\RoomInfoModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="NinjectDependencyResolver.cs" />
@@ -193,6 +194,8 @@
     <Content Include="Scripts\src\LoginForm.js" />
     <Content Include="Scripts\src\Main.css" />
     <Content Include="Scripts\src\Main.js" />
+    <Content Include="Scripts\src\Room.css" />
+    <Content Include="Scripts\src\Room.js" />
     <Content Include="Scripts\src\RoomInfo.css" />
     <Content Include="Scripts\src\RoomInfo.js" />
     <Content Include="Scripts\src\RoomsInfoBlock.css" />

@@ -9,7 +9,7 @@ flex-direction: column;
 .rooms-info-block-header{
     width: 100%;
     height: 15%;
-    background-color: orange;
+    background-color: #fdb713;
     border: 1px solid orangered;
     text-align: center;
     line-height: 250%;
@@ -18,8 +18,8 @@ flex-direction: column;
 }
 
 .rooms-info-block-content{
-    margin: 0 auto;
-    width: 70%;
+    margin: 2% auto;
+    width: 62%;
     height: auto;
     display: flex;
     justify-content: space-between;

@@ -1,9 +1,13 @@
 ﻿import React from 'react';
 import './Header.css'
+import RoomsInfoBlock from './RoomsInfoBlock'
 
 class Header extends React.Component {
     constructor(props) {
         super(props)
+        this.state= {
+            setPage:props.setPage
+        }
     }
 
     render() {
@@ -17,7 +21,7 @@ class Header extends React.Component {
                             <li><div className="list-img"></div><a href="#">Связаться с нами</a></li>
                         </ul>
                         <ul className="down">
-                            <li><a href="#">Наши квесты</a></li>
+                            <li><a href="#" onClick={()=>this.state.setPage(<RoomsInfoBlock setPage={this.state.setPage}/>)}>Наши квесты</a></li>
                             <li><a href="#">Информация о группе</a></li>
                         </ul>
                     </div>

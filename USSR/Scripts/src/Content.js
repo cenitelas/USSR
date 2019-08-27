@@ -7,21 +7,20 @@ class Content extends React.Component {
         super(props)
         this.state = {
             user: {},
-            page: ''
+            page: props.page,
+            setPage: props.setPage
         }
-        this.getPage = this.getPage.bind(this);
     }
 
     componentDidMount() {
-        this.getPage();
-    }
-
-    getPage() {
-        this.setState({ page: <RoomsInfoBlock/> });
+        if(this.state.page===''){
+            var context = <RoomsInfoBlock setPage={this.state.setPage}/>;
+            this.setState({page:context});
+        }
     }
 
     render() {
-
+        console.log(this.state.page);
         return (
             <div className="content">
                 <div className="margin"></div>

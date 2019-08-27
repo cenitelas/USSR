@@ -1,12 +1,13 @@
 ﻿import React from 'react';
 import './RoomInfo.css'
 import {Button} from 'react-bootstrap'
-import asd from '../img/room1.jpg'
+import Room from './Room'
 class RoomInfo extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            roomInfo : props.room
+            roomInfo : props.room,
+            setPage : props.setPage
         }
     }
 
@@ -16,7 +17,7 @@ class RoomInfo extends React.Component {
         return (
             <div className="room-info">             
                 <div className="logo">
-                <div className="room-stat">
+                <div onClick={()=>this.state.setPage(<Room setPage={this.state.setPage} room={this.state.roomInfo}/>)} className="room-stat">
                     <p>{room.MinUsers}-{room.MaxUsers} participans</p>
                     <p>{room.Delay} mins.</p>
                     <p>{room.EscapeRate}%</p>
@@ -26,7 +27,7 @@ class RoomInfo extends React.Component {
                
                 <h3>{room.Name}</h3>
                 <p>{room.Discription}</p>
-                <Button variant="outline-warning">BOOK NOW</Button>
+                <Button onClick={()=>this.state.setPage(<Room key={room.Id} setPage={this.state.setPage} room={this.state.roomInfo}/>)} variant="outline-warning">BOOK NOW</Button>
             </div>
         )
     }
